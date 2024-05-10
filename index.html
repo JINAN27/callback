@@ -45,6 +45,18 @@
             tableBody.innerHTML += createTableRow(users);
         });
     }
+
+    function createTableRow(users) { 
+        return `
+            <tr>
+                <td>${users.name}</td>
+                <td>${users.username}</td>
+                <td>${users.email}</td>
+                <td>${users.phone}</td>
+                <td>${users.website}</td>
+            </tr>
+        `;
+    }
     </script>
 </body>
 </html>
