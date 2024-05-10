@@ -25,6 +25,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    displayUserData(data);
+        }else {
+            console.eror('Error fetching data:', xhr.statusText);
+        }
+    }
+};
+
+    xhr.open('GET','https://jsonplaceholder.typicode.com/users', true);
+    xhr.send();
+
+    function displayUserData(data) {
+        var tableBody = document.getElementById('userTableBody');
+        data.forEach(function(users) { 
+            tableBody.innerHTML += createTableRow(users);
+        });
+    }
     </script>
 </body>
 </html>
