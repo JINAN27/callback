@@ -12,6 +12,7 @@
         <table class="table">
             <thead class="thead-light">
                 <tr>
+                    <th>id</th>
                     <th>Name</th>
                     <th>Username</th>
                     <th>Email</th>
@@ -49,6 +50,7 @@
     function createTableRow(users) { 
         return `
             <tr>
+                <td>${users.id}</td>
                 <td>${users.name}</td>
                 <td>${users.username}</td>
                 <td>${users.email}</td>
